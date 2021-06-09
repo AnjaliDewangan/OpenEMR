@@ -20,15 +20,22 @@ public class DemoTest {
 		XSSFWorkbook book = new XSSFWorkbook(file); // open
 		XSSFSheet sheet = book.getSheet("validCredentialTest");
 		
-		for(int r=0;r<3;r++) 
+		int rowCount = sheet.getPhysicalNumberOfRows();
+		int cellcount = sheet.getPhysicalNumberOfRows();
+		
+		Object[][] main= new Object[rowCount -1][cellcount];
+		
+		for(int r=1; r<rowCount; r++) 
 		{ 
-			for(int c=0;c<3;c++) 
+			for(int c=0; c<cellcount; c++) 
 			{ 
 			XSSFRow row = sheet.getRow(r); 
 			XSSFCell cell = row.getCell(c); 
 			DataFormatter format = new DataFormatter(); 
 			String cellValue = format.formatCellValue(cell); 
 			System.out.print(cellValue); 
+			
+			main[r -1][c] = cellValue;
 			} 
 		}
 	}
