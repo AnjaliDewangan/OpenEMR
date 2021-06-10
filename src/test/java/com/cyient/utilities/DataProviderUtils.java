@@ -49,7 +49,7 @@ public class DataProviderUtils {
 	@DataProvider
 	public Object[][] validCredentialExcelData() throws IOException
 	{
-		 Object[][] main= ExcelUtils.getSheetIntoObjectArray("src/test/resources/testdata/OpenEMRData.xlsx", "validCredentialTest");
+		 Object[][] main= ExcelUtilities.getSheetIntoObjectArray("src/test/resources/testdata/OpenEMRData.xlsx", "validCredentialTest");
 		 return main;
 	}
 }
